@@ -10,4 +10,3 @@ game = Game.new n.to_i
 game.play
 game.top
 game.winner
-
