@@ -22,7 +22,21 @@ class Turn
     self.count repeat.sort!.reverse!
     @player.add_points @points
 
-    puts "#{@player.name} roll #{@rolls} and earn #{@points} points"
+    puts "#{@player.name} roll #{@rolls} and earn #{@points} points with combination #{self.combination}"
+  end
+
+  def combination
+    if @points == 50
+      return "yacht"
+    elsif @points == 40
+      return "straight"
+    elsif @points == 25
+      return "full house"
+    elsif @points == 0
+      return "nothing"
+    elsif @points 
+      return "quads"
+    end
   end
 
   def count repeat
