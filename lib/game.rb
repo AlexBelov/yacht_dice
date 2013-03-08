@@ -9,7 +9,7 @@ class Game
     num = 0
     winner = @players.max_by {|player| player.points}
     @players.each {|player| num += 1 if player.points == winner.points}
-    puts "\nThe game winner is #{winner.name} with #{winner.points} points" if num == 1
+    puts "\nGame winner is #{winner.name} with #{winner.points} points" if num == 1
     puts "\nNo winners" if num != 1
   end
 
