@@ -8,6 +8,16 @@ class Turn
     @dice = Dice.new
   end
 
+  #for tests
+  def rolls rolls
+    @rolls = rolls
+  end
+
+  def points points
+    @points = points
+  end
+  #for tests
+
   def roll
     repeat = []
     5.times {@rolls.push @dice.roll}
@@ -42,7 +52,8 @@ class Turn
   def count repeat
    @rolls.each {|roll| @points += roll} if repeat[0] == 4
    @points = 25 if repeat[0] == 3 and repeat[1] == 2
-   @points = 40 if @rolls == [1,2,3,4,5]
+   @points = 40 if @rolls == [1,2,3,4,5] or @rolls == [2,3,4,5,6]
    @points = 50 if repeat[0] == 5
+   return @points
   end
 end
