@@ -40,6 +40,8 @@ class Turn
       return "yacht"
     elsif @points == 40
       return "straight"
+    elsif @points == 30
+      return "small straight"
     elsif @points == 25
       return "full house"
     elsif @points == 0
@@ -52,7 +54,8 @@ class Turn
   def count repeat
    @rolls.each {|roll| @points += roll} if repeat[0] == 4
    @points = 25 if repeat[0] == 3 and repeat[1] == 2
-   @points = 40 if @rolls == [1,2,3,4,5] or @rolls == [2,3,4,5,6]
+   @points = 30 if @rolls == [1,2,3,4,5]
+   @points = 40 if @rolls == [2,3,4,5,6]
    @points = 50 if repeat[0] == 5
    return @points
   end
